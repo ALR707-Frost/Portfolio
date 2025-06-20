@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Rafi Al Islam | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .typing-text::after {
+            content: "|";
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            background-size: 200% 100%;
+            background-position: right bottom;
+            background-image: linear-gradient(to right, #ffffff 50%, #f0f4ff 50%);
+        }
+        
+        .project-card:hover {
+            background-position: left bottom;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">Al Rafi</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600">About</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-3 px-4">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About</a>
+            <a href="#experience" class="block py-2 text-gray-700 hover:text-blue-600">Experience</a>
+            <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600">Projects</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    Hi, I'm <span class="gradient-text">Al Rafi Al Islam</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-4">
+                    <span class="typing-text" id="typing-text"></span>
+                </h2>
+                <p class="text-gray-600 mb-6 max-w-lg">
+                    Computer Science student at Bangladesh University of Professionals passionate about software development and problem solving.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-md hover:shadow-lg transition duration-300">
+                        Contact Me
+                    </a>
+                    <a href="#projects" class="px-6 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 transition duration-300">
+                        View Projects
+                    </a>
+                </div>
+                <div class="flex mt-6 space-x-4">
+                    <a href="https://www.linkedin.com/in/al-rafi-243430249" class="text-gray-600 hover:text-blue-600 transition duration-300">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/alr707-frost" class="text-gray-600 hover:text-gray-900 transition duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://linktr.ee/alrafi7007" class="text-gray-600 hover:text-green-600 transition duration-300">
+                        <i class="fas fa-link text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <img src="photo.jpg" alt="Profile" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white shadow-xl">
+                    <div class="absolute -bottom-4 -right-4 bg-white p-2 rounded-full shadow-md">
+                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-2 rounded-full">
+                            <i class="fas fa-code text-white text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto bg-white rounded-xl shadow-sm">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-2">About <span class="gradient-text">Me</span></h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+        </div>
+        <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                <h3 class="text-xl font-semibold mb-4">Get to know me!</h3>
+                <p class="text-gray-600 mb-4">
+                    I'm a Computer Science and Engineering student at Bangladesh University of Professionals with a passion for software development and problem-solving.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    My journey in tech started when I was in school, and since then I've been constantly learning and building projects to enhance my skills.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    When I'm not coding, you can find me tutoring students, participating in tech events, or exploring new technologies.
+                </p>
+                <a href="#contact" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-md hover:shadow-lg transition duration-300 inline-block">
+                    Contact
+                </a>
+            </div>
+            <div class="md:w-1/2">
+                <h3 class="text-xl font-semibold mb-4">My Skills</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-badge px-4 py-2 bg-blue-100 text-blue-800 rounded-full">C/C++</span>
+                    <span class="skill-badge px-4 py-2 bg-purple-100 text-purple-800 rounded-full">Java</span>
+                    <span class="skill-badge px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full">JavaScript</span>
+                    <span class="skill-badge px-4 py-2 bg-red-100 text-red-800 rounded-full">HTML/CSS</span>
+                    <span class="skill-badge px-4 py-2 bg-green-100 text-green-800 rounded-full">Python</span>
+                    <span class="skill-badge px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full">React.js</span>
+                    <span class="skill-badge px-4 py-2 bg-pink-100 text-pink-800 rounded-full">Redux</span>
+                    <span class="skill-badge px-4 py-2 bg-blue-100 text-blue-800 rounded-full">PHP</span>
+                    <span class="skill-badge px-4 py-2 bg-gray-100 text-gray-800 rounded-full">MySQL</span>
+                    <span class="skill-badge px-4 py-2 bg-teal-100 text-teal-800 rounded-full">MongoDB</span>
+                    <span class="skill-badge px-4 py-2 bg-orange-100 text-orange-800 rounded-full">Git</span>
+                    <span class="skill-badge px-4 py-2 bg-purple-100 text-purple-800 rounded-full">LaTeX</span>
+                </div>
+                
+                <h3 class="text-xl font-semibold mt-8 mb-4">Education</h3>
+                <div class="space-y-4">
+                    <div class="card-hover p-4 bg-gray-50 rounded-lg border border-gray-100">
+                        <div class="flex justify-between">
+                            <h4 class="font-medium">BSc in Computer Science & Engineering</h4>
+                            <span class="text-sm text-gray-500">2022 - Present</span>
+                        </div>
+                        <p class="text-gray-600">Bangladesh University of Professionals</p>
+                    </div>
+                    <div class="card-hover p-4 bg-gray-50 rounded-lg border border-gray-100">
+                        <div class="flex justify-between">
+                            <h4 class="font-medium">Higher School Certificate</h4>
+                            <span class="text-sm text-gray-500">2021</span>
+                        </div>
+                        <p class="text-gray-600">Dhaka Board</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-2">My <span class="gradient-text">Experience</span></h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+        </div>
+        
+        <div class="space-y-8">
+            <!-- Experience 1 -->
+            <div class="card-hover p-6 bg-white rounded-xl shadow-sm">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                    <h3 class="text-xl font-semibold">Assistant to Senior Developer</h3>
+                    <span class="text-blue-600">Nov 2022 - May 2023</span>
+                </div>
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Road To BUP FST-Online Admission Assistance Platform</h4>
+                <p class="text-gray-600 mb-4">Dhaka, Bangladesh</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-600">
+                    <li>Assisted Senior Developers in backend development of webpage</li>
+                    <li>Implemented LaTeX and JavaScript solutions for the platform</li>
+                    <li>Conducted analysis on data, identifying and fixing bugs in the webpage</li>
+                </ul>
+            </div>
+            
+            <!-- Experience 2 -->
+            <div class="card-hover p-6 bg-white rounded-xl shadow-sm">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                    <h3 class="text-xl font-semibold">Tutor</h3>
+                    <span class="text-blue-600">Aug 2022 - Present</span>
+                </div>
+                <h4 class="text-lg font-medium text-gray-700 mb-2">Private Tutoring</h4>
+                <p class="text-gray-600 mb-4">Dhaka, Bangladesh</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-600">
+                    <li>Taught students from Class 9 to 12 in all Science subjects including Physics, Chemistry, and Math</li>
+                    <li>Taught English to students to improve their vocabulary and grammatical skills</li>
+                    <li>Developed customized learning plans for each student based on their needs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto bg-white">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-2">My <span class="gradient-text">Projects</span></h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Project 1 -->
+            <div class="project-card p-6 rounded-xl border border-gray-100">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-semibold">BloodBank Management System</h3>
+                    <a href="https://github.com/ALR707-Frost/Bruh_Projects" class="text-gray-500 hover:text-blue-600">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <p class="text-gray-600 mb-4">A comprehensive system to manage blood bank operations including donor registration, blood inventory, and request processing.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="text-xs px-2 py-1 bg-blue-100 text-blue-800 rounded">React.js</span>
+                    <span class="text-xs px-2 py-1 bg-purple-100 text-purple-800 rounded">Redux</span>
+                    <span class="text-xs px-2 py-1 bg-yellow-100 text-yellow-800 rounded">PHP</span>
+                    <span class="text-xs px-2 py-1 bg-green-100 text-green-800 rounded">MySQL</span>
+                    <span class="text-xs px-2 py-1 bg-gray-100 text-gray-800 rounded">Git</span>
+                </div>
+                <a href="#" class="text-blue-600 hover:underline inline-flex items-center">
+                    View Details <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card p-6 rounded-xl border border-gray-100">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-semibold">To-Do List Project</h3>
+                    <a href="https://github.com/alr707-frost/todo-list" class="text-gray-500 hover:text-blue-600">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <p class="text-gray-600 mb-4">A responsive to-do list application with task management features including creation, completion, and deletion of tasks.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="text-xs px-2 py-1 bg-yellow-100 text-yellow-800 rounded">JavaScript</span>
+                    <span class="text-xs px-2 py-1 bg-blue-100 text-blue-800 rounded">HTML</span>
+                    <span class="text-xs px-2 py-1 bg-pink-100 text-pink-800 rounded">CSS</span>
+                    <span class="text-xs px-2 py-1 bg-gray-100 text-gray-800 rounded">Git</span>
+                </div>
+                <a href="#" class="text-blue-600 hover:underline inline-flex items-center">
+                    View Details <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="text-center mt-8">
+            <a href="https://github.com/alr707-frost" class="inline-flex items-center px-6 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 transition duration-300">
+                <i class="fab fa-github mr-2"></i> View All Projects
+            </a>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-2">My <span class="gradient-text">Achievements</span></h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Achievement 1 -->
+            <div class="card-hover p-6 bg-white rounded-xl shadow-sm flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                    <i class="fas fa-trophy text-blue-600"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-1">Runner-Up in Inter College Physics Olympiad</h3>
+                    <p class="text-gray-600 text-sm">March 2019</p>
+                </div>
+            </div>
+            
+            <!-- Achievement 2 -->
+            <div class="card-hover p-6 bg-white rounded-xl shadow-sm flex items-start">
+                <div class="bg-purple-100 p-3 rounded-full mr-4">
+                    <i class="fas fa-users text-purple-600"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-1">Member of Rotaract Club</h3>
+                    <p class="text-gray-600 text-sm">Aug 2019 - Nov 2021</p>
+                </div>
+            </div>
+            
+            <!-- Achievement 3 -->
+            <div class="card-hover p-6 bg-white rounded-xl shadow-sm flex items-start">
+                <div class="bg-green-100 p-3 rounded-full mr-4">
+                    <i class="fas fa-flask text-green-600"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-1">Outstanding Performance in Science Fair</h3>
+                    <p class="text-gray-600 text-sm">April 2018</p>
+                </div>
+            </div>
+            
+            <!-- Achievement 4 -->
+            <div class="card-hover p-6 bg-white rounded-xl shadow-sm flex items-start">
+                <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                    <i class="fas fa-user-tie text-yellow-600"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-1">Assistant Joint Secretary (Logistics)</h3>
+                    <p class="text-gray-600 text-sm">BUP Computer Programming Club</p>
+                    <p class="text-gray-600 text-sm">April 2024 - Present</p>
+                </div>
+            </div>
+            
+            <!-- Achievement 5 -->
+            <div class="card-hover p-6 bg-white rounded-xl shadow-sm flex items-start">
+                <div class="bg-red-100 p-3 rounded-full mr-4">
+                    <i class="fas fa-laptop-code text-red-600"></i>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-1">Executive Member</h3>
+                    <p class="text-gray-600 text-sm">BUP InfoTech Club</p>
+                    <p class="text-gray-600 text-sm">March 2023 - Present</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto bg-white">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-2">Get In <span class="gradient-text">Touch</span></h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+        </div>
+        
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="md:w-1/2">
+                <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 p-2 rounded-full mr-4">
+                            <i class="fas fa-envelope text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Email</h4>
+                            <a href="mailto:alrafi7007@gmail.com" class="text-gray-600 hover:text-blue-600">alrafi7007@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-purple-100 p-2 rounded-full mr-4">
+                            <i class="fas fa-phone-alt text-purple-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Phone</h4>
+                            <a href="tel:+8801892641583" class="text-gray-600 hover:text-blue-600">+88-0189-2641583</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-green-100 p-2 rounded-full mr-4">
+                            <i class="fas fa-map-marker-alt text-green-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Location</h4>
+                            <p class="text-gray-600">Mirpur-12, Dhaka-1216, Bangladesh</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-semibold mt-8 mb-4">Follow Me</h3>
+                <div class="flex space-x-4">
+                    <a href="https://www.linkedin.com/in/al-rafi-243430249" class="social-icon w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/alr707-frost" class="social-icon w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-gray-800 hover:text-white transition duration-300">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linktr.ee/alrafi7007" class="social-icon w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition duration-300">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2">
+                <h3 class="text-xl font-semibold mb-4">Send Me a Message</h3>
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300"></textarea>
+                    </div>
+                    <button type="submit" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-md hover:shadow-lg transition duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-gray-600 mb-4">© 2023 Al Rafi Al Islam. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#home" class="text-gray-500 hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-home"></i>
+                </a>
+                <a href="#about" class="text-gray-500 hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#experience" class="text-gray-500 hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-briefcase"></i>
+                </a>
+                <a href="#projects" class="text-gray-500 hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-project-diagram"></i>
+                </a>
+                <a href="#contact" class="text-gray-500 hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg hidden items-center justify-center hover:bg-blue-700 transition duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Typing effect
+        const typingText = document.getElementById('typing-text');
+        const texts = ["Software Developer", "Tech Enthusiast", "Problem Solver", "Tutor"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        
+        function type() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typingText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                typingSpeed = 1500; // Pause at end of word
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typingSpeed = 500; // Pause before typing next word
+            }
+            
+            setTimeout(type, typingSpeed);
+        }
+        
+        // Start typing effect after a short delay
+        setTimeout(type, 1000);
+        
+        // Back to top button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('hidden');
+                backToTopBtn.classList.add('flex');
+            } else {
+                backToTopBtn.classList.add('hidden');
+                backToTopBtn.classList.remove('flex');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Add active class to current section in navigation
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-blue-600');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
